@@ -1,7 +1,7 @@
 from django.urls import path
 
-from store.views import index
+from store.views import create
 
 urlpatterns = [
-    path('/', index),
+    path('books/', create, name="create")
 ]
