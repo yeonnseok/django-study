@@ -1,11 +1,10 @@
 from django.db import models
 
+from accounts.models import Member
+
 
 class Author(models.Model):
     name = models.CharField(max_length=20, blank=False, null=False)
-
-    def __str__(self):
-        return self.name
 
 
 class Book(models.Model):
@@ -14,3 +13,7 @@ class Book(models.Model):
     stock_quantity = models.IntegerField()
 
 
+class MemberBook(models.Model):
+    member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name="books")
+    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="members")
+    count = models.IntegerField(default=0)

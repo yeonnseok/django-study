@@ -1,5 +1,7 @@
+from django.contrib import auth
 from django.shortcuts import render, redirect
-from store.models import Book, Author
+
+from store.models import Book, Author, MemberBook
 
 
 def index(request):
@@ -32,3 +34,24 @@ def create_book(request):
 def list_book(request):
     books = Book.objects.all()
     return render(request, "store/book-list.html", {"books": books})
+
+
+def create_order(request):
+    if request.method == 'POST':
+        book_id = request.POST['book']
+        count = request.POST['count']
+        member = request.user.member
+        MemberBook.objects.create(member_id=member.id, book_id=book_id, count=count)
+
+        target_book = Book.objects.get(id=book_id)
+        target_book.stock_quantity -= int(count)
+        target_book.save()
+        return redirect("/")
+
+    books = Book.objects.all()
+    return render(request, "store/order-form.html", {"books": books})
+
+
+def list_order(request):
+    orders = MemberBook.objects.all()
+    return render(request, "store/order-list.html", {"orders": orders})

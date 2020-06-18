@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container text-center col-md-10 mt-5">
+         <h1>Register Member!</h1>
+    </div>
+
+    <form class="m-auto col-md-6" method="post" action="{% url 'signup' %}">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email 주소</label>
+        <input name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="이메일을 입력해주세요">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">사용자 이름</label>
+        <input name="username" type="text" class="form-control" placeholder="사용자 이름을 입력해주세요">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Password</label>
+        <input name="password1" type="password" class="form-control" id="exampleInputPassword1" placeholder="비밀번호를 입력해주세요">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword2">Password</label>
+        <input name="password2" type="password" class="form-control" id="exampleInputPassword2" placeholder="비밀번호를 확인해주세요">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1">핸드폰 번호</label>
+        <input name="phone-number" type="text" class="form-control" placeholder="핸드폰 번호를 입력해주세요">
+      </div>
+      <button type="submit" class="btn btn-primary">가입하기</button>
+    </form>
+
+</body>
+</html>

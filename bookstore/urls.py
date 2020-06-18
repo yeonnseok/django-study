@@ -18,10 +18,13 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
+import accounts.views
 import store.views
 
 urlpatterns = [
     path('', store.views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('store/', include('store.urls'))
+    path('store/', include('store.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('accounts.urls')),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

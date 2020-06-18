@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Author List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container text-center col-md-10 mt-5">
+         <h1>All MemberList!</h1>
+    </div>
+
+    <table class="table m-auto col-md-6">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Email</th>
+          <th scope="col">Username</th>
+          <th scope="col">PhoneNumber</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for member in members %}
+            <tr>
+              <th scope="row">{{ member.id }}</th>
+              <td>{{ member.email }}</td>
+              <td>{{ member.username }}</td>
+              <td>{{ member.phone_number }}</td>
+            </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+
+    <div class="container text-center col-md-10 mt-5">
+         <a href="/"><button class="btn btn-warning">홈으로</button></a>
+    </div>
+</body>
+</html>

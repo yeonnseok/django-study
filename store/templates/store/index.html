@@ -10,18 +10,32 @@
     <div class="container text-center col-md-10 mt-5">
          <h1>Welcome BookStore!</h1>
     </div>
+
+    <div class="float-right btn">
+        {% if user.is_authenticated %}
+             {{ user.get_username }}님, 안녕하세요
+             <a href="{% url 'logout'%}?next={{request.path}}">로그아웃</a>
+        {% else %}
+             <a href="{% url 'login'%}?next={{request.path}}">로그인</a>
+        {% endif %}
+    </div>
+
     <div class="container d-flex flex-column text-center">
-        <div class="p-5 justify-content-center align-content-center">
+        <div class="p-4 justify-content-center align-content-center">
             <a href="/store/author/create/"><button class="btn-lg btn- btn btn-primary" type="submit">저자 등록</button></a>
             <a href="/store/author/list/"><button class="btn-lg btn- btn btn-primary" type="submit">저자 목록</button></a>
         </div>
-        <div class="p-5 justify-content-center align-content-center">
+        <div class="p-4 justify-content-center align-content-center">
             <a href="/store/books/create/"><button class="btn-lg btn btn-danger" type="submit">책 등록</button></a>
             <a href="/store/books/list/"><button class="btn-lg btn btn-danger" type="submit">책 목록</button></a>
         </div>
-        <div class="p-5 justify-content-center align-content-center">
-            <a><button class="btn-lg btn btn-warning" type="submit">주문 하기</button></a>
-            <a><button class="btn-lg btn btn-warning" type="submit">주문 목록</button></a>
+        <div class="p-4 justify-content-center align-content-center">
+            <a href="/accounts/signup/"><button class="btn-lg btn btn-success" type="submit">회원 가입</button></a>
+            <a href="/accounts/members/list/"><button class="btn-lg btn btn-success" type="submit">회원 목록</button></a>
+        </div>
+        <div class="p-4 justify-content-center align-content-center">
+            <a href="/store/orders/create/"><button class="btn-lg btn btn-warning" type="submit">주문 하기</button></a>
+            <a href="/store/orders/list/"><button class="btn-lg btn btn-warning" type="submit">주문 목록</button></a>
         </div>
     </div>
 </body>

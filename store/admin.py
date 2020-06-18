@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from store.models import Book, Author
+from store.models import Book, Author, MemberBook
 
 
 @admin.register(Book)
@@ -13,3 +13,6 @@ class AuthorAdmin(admin.ModelAdmin):
     list_display = ['id', 'name']
 
 
+@admin.register(MemberBook)
+class MemberBookAdmin(admin.ModelAdmin):
+    list_display = ['id', 'member', 'book']
