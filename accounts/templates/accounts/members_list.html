@@ -24,8 +24,8 @@
         {% for member in members %}
             <tr>
               <th scope="row">{{ member.id }}</th>
-              <td>{{ member.email }}</td>
-              <td>{{ member.username }}</td>
+              <td>{{ member.user.email }}</td>
+              <td>{{ member.user.username }}</td>
               <td>{{ member.phone_number }}</td>
             </tr>
         {% endfor %}
