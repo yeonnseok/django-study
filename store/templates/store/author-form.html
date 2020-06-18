@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register Author</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container text-center col-md-10 mt-5">
+         <h1>Register Author!</h1>
+    </div>
+    <form class="m-auto col-md-6" method="POST" action="/store/author/create/">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="exampleInputEmail1">저자 이름</label>
+        <input name="name" type="text" class="form-control" placeholder="저자 이름을 입력해주세요.">
+      </div>
+      <button type="submit" class="btn btn-primary">등록</button>
+    </form>
+    <div class="container text-center col-md-10 mt-5">
+         <a href="/"><button class="btn btn-warning">홈으로</button></a>
+    </div>
+</body>
+</html>

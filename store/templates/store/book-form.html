@@ -10,7 +10,7 @@
     <div class="container text-center col-md-10 mt-5">
          <h1>Register Book!</h1>
     </div>
-    <form class="m-auto col-md-6" method="POST" action="/store/books/">
+    <form class="m-auto col-md-6" method="POST" action="/store/books/create/">
       {% csrf_token %}
       <div class="form-group">
         <label for="exampleInputEmail1">책 제목</label>
@@ -30,5 +30,8 @@
       </div>
       <button type="submit" class="btn btn-primary">등록</button>
     </form>
+    <div class="container text-center col-md-10 mt-5">
+         <a href="/"><button class="btn btn-warning">홈으로</button></a>
+    </div>
 </body>
 </html>
