@@ -5,14 +5,6 @@ from django.dispatch import receiver
 
 
 class Member(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="member")
-    phone_number = models.CharField(max_length=20, blank=True, null=True)
+    # TODO: 회원 모델 필드
+    pass
 
-    @receiver(post_save, sender=User)
-    def create_user_member(sender, instance, created, **kwargs):
-        if created:
-            Member.objects.create(user=instance)
-
-    @receiver(post_save, sender=User)
-    def save_user_member(sender, instance, **kwargs):
-        instance.member.save()

@@ -3,6 +3,5 @@ from django.urls import path
 from accounts.views import signup, list_member
 
 urlpatterns = [
-    path('signup/', signup, name="signup"),
-    path('members/list/', list_member, name="list-member"),
+    # TODO: 회원가입, 회원 목록 조회 url
 ]

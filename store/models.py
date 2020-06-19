@@ -4,16 +4,15 @@ from accounts.models import Member
 
 
 class Author(models.Model):
-    name = models.CharField(max_length=20, blank=False, null=False)
+    # TODO: 저자 모델
+    pass
 
 
 class Book(models.Model):
-    title = models.CharField(max_length=30, blank=False, null=False)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name="book")
-    stock_quantity = models.IntegerField()
+    # TODO: 책 모델
+    pass
 
 
-class MemberBook(models.Model):
-    member = models.ForeignKey(Member, on_delete=models.CASCADE, related_name="books")
-    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name="members")
-    count = models.IntegerField(default=0)
+# class MemberBook(models.Model):
+#     # TODO: 중간 모델
+#     pass

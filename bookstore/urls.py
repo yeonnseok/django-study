@@ -24,7 +24,7 @@ import store.views
 urlpatterns = [
     path('', store.views.index, name='index'),
     path('admin/', admin.site.urls),
-    path('store/', include('store.urls')),
-    path('accounts/', include('django.contrib.auth.urls')),
-    path('accounts/', include('accounts.urls')),
+
+    # TODO: accounts, store 앱 url파일 설정
+
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
