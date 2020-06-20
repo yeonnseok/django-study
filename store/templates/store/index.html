@@ -11,14 +11,14 @@
          <h1>Welcome BookStore!</h1>
     </div>
 
-    <div class="float-right btn">
-        {% if user.is_authenticated %}
-             {{ user.get_username }}님, 안녕하세요
-             <a href="{% url 'logout'%}?next={{request.path}}">로그아웃</a>
-        {% else %}
-             <a href="{% url 'login'%}?next={{request.path}}">로그인</a>
-        {% endif %}
-    </div>
+{#    <div class="float-right btn">#}
+{#        {% if user.is_authenticated %}#}
+{#             {{ user.get_username }}님, 안녕하세요#}
+{#             <a href="{% url 'logout'%}?next={{request.path}}">로그아웃</a>#}
+{#        {% else %}#}
+{#             <a href="{% url 'login'%}?next={{request.path}}">로그인</a>#}
+{#        {% endif %}#}
+{#    </div>#}
 
     <div class="container d-flex flex-column text-center">
         <div class="p-4 justify-content-center align-content-center">
